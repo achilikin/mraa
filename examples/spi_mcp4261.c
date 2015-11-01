@@ -44,6 +44,7 @@ main(int argc, char** argv)
             recv = mraa_spi_write_buf(spi, data, 2);
             printf("Writing -%i", i);
             printf("RECIVED-%i-%i\n", recv[0], recv[1]);
+			free((void *)recv);
             usleep(100000);
         }
         for (i = 130; i > 90; i--) {
@@ -51,6 +52,7 @@ main(int argc, char** argv)
             recv = mraa_spi_write_buf(spi, data, 2);
             printf("Writing -%i", i);
             printf("RECIVED-%i-%i\n", recv[0], recv[1]);
+			free((void *)recv);
             usleep(100000);
         }
     }
